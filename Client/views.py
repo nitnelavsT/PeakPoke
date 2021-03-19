@@ -8,7 +8,7 @@ from .forms import ArticleForm
 
 
 
-#class IndexView(generic.ListView):
+class IndexView(generic.ListView):
     template_name = 'Client/index.html'
     context_object_name = 'lastest_Client'
 
@@ -16,16 +16,16 @@ from .forms import ArticleForm
         """:return le dernier Client"""
         return Client.objects.order_by('Nom') #Permet de trier les client par nom
 
-#class DetailView(generic.DetailView):
+class DetailView(generic.DetailView):
     model = Client
     template_name = 'Client/detail.html'
 
-#class MontantView(generic.DetailView):
+class MontantView(generic.DetailView):
     model = Client
     template_name = 'Client/Montant.html'
 
 
-#def commande_article(request, Client_id):
+def commande_article(request, Client_id):
     client = get_object_or_404(Client, pk=Client_id)
     try:
         selected_commande = client.commande_set.get(pk=request.POST['Commande'])

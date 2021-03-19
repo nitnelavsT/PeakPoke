@@ -38,5 +38,5 @@ class Commande(models.Model):
     Type_commande = models.CharField(max_length=50)
 
 
-#azerty
+
 

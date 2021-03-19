@@ -1,0 +1,15 @@
+{\rtf1}
+<h1>{{ client.Nom }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'Client:Numero_Unique' Client.id %}" method="post">
+{% csrf_token %}
+{% for Commande in Client.Commande_set_all %}
+    <input type="radio" name="Commande" id="Commande{{ forloop.counter }}" value="{{ Commande.id }}">
+    <label for="Commande{{ forloop.counter }}">{{ Commande.Commande_article }}</label>
+<br>
+{% endfor %}
+
+<input type="submit" value="Numero_Unique">
+</form>

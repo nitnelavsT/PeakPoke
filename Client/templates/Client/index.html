@@ -1,0 +1,13 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'Client/style.css' %}">
+
+{% if lastest_Client %}
+    <ul>
+        {% for Client in lastest_Client %}
+            <li><a href="{%url 'detail' Client.id}"> {{ Client.Nom }}</a></li>
+        {% endfor %}
+        </ul>
+{% else %}
+        <p>No Client are avaliable.</p>
+{% endif %}

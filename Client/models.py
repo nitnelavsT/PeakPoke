@@ -38,8 +38,6 @@ class Commande(models.Model):
     Type_commande = models.CharField(max_length= 50)
 
 
-#    def __str__(self):
- #       '{self.Commande_individu} {self.Commande_article}'.format(self=self)
 
 
 

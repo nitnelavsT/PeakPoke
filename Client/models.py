@@ -1,6 +1,6 @@
 from django.db import models
 from datetime import datetime
-from phonenumber_field.modelfields import PhoneNumberField
+#from phonenumber_field.modelfields import PhoneNumberField
 from django.core.validators import RegexValidator
 
 cat_socio = (

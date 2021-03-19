@@ -35,9 +35,8 @@ class Commande(models.Model):
     Montant = models.FloatField()
     Commande_individu = models.CharField(max_length=1000)
     Commande_article = models.CharField(max_length= 1000)
-    Type_commande = models.CharField(max_length= 50)
+    Type_commande = models.CharField(max_length=50)
 
 
-#ici
 
 

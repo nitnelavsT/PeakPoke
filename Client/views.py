@@ -40,10 +40,11 @@ def commande_article(request, Client_id):
 
 ###FORMULAIRE###
 
-def index(request):
-    form = ArticleForm()
+# def index(request):
+#     form = ArticleForm()
+#
+#     return render(request, 'index.html', {'form': form, 'dataClient':Client.objects.all()})
 
-    return render(request, 'index.html', {'form': form, 'dataClient':Client.objects.all()})
 
 
 

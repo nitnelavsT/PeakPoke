@@ -9,9 +9,8 @@ from Client import views
 
 
 urlpatterns = [
-    url(r'^$', views.index),
     path('Client/', include('Client.urls')),
-    path('Commandes/', include('Commandes.urls')),
+    path('Article/', include('Article.urls')),
     path('admin/', admin.site.urls),
     path('__debug__/', include(debug_toolbar.urls)),
 ]

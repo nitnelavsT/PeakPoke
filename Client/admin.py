@@ -1,6 +1,7 @@
 from django.contrib import admin
 
 from .models import  Client, Commande
+from Article.models import Article
 
 #admin.site.register(Client)
 
@@ -18,8 +19,15 @@ class ClientAdmin(admin.ModelAdmin):
     ]
     inlines = [CommandeInline]
 
+
     search_fields = ['Nom','Prenom']
 
 admin.site.register(Client, ClientAdmin)
 
 
+class ArticleInline(admin.TabularInline):
+    model = Article
+    extra = 0
+
+class CommandeAdmin(admin.ModelAdmin):
+    inlines = [ArticleInline]

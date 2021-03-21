@@ -33,9 +33,7 @@ class Commande(models.Model):
     Numero_Unique = models.IntegerField()
     Quantite = models.IntegerField()
     Montant = models.FloatField()
-    Commande_individu = models.CharField(max_length=1000)
     Commande_article = models.CharField(max_length= 1000)
-    Type_commande = models.CharField(max_length=50)
 
 
 

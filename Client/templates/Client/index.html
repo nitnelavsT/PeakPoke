@@ -2,12 +2,18 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'Client/style.css' %}">
 
-{% if lastest_Client %}
-    <ul>
-        {% for Client in lastest_Client %}
-            <li><a href="{%url 'detail' Client.id}"> {{ Client.Nom }}</a></li>
-        {% endfor %}
-        </ul>
-{% else %}
-        <p>No Client are avaliable.</p>
-{% endif %}
+<head>
+    <h1>Selection du client souhaité :</h1>
+</head>
+
+<body>
+    {% if lastest_Client %}
+        <ul>
+            {% for Client in lastest_Client %}
+                <li><a href="{%url 'detail' Client.id}" style="text-decoration:none"> {{ Client.Nom }}</a></li>
+            {% endfor %}
+            </ul>
+    {% else %}
+            <p>No Client are available.</p>
+    {% endif %}
+</body>

@@ -35,5 +35,5 @@ class Commande(models.Model):
     Commande_article = models.CharField(max_length= 1000)
 
 
-#azeert
+
 

@@ -10,9 +10,8 @@ app_name = 'Client'
 urlpatterns = [
     #ex /Client/
     path('', views.IndexView.as_view(), name='index'),
-    path('<int:pk>/', views.DetailView.as_view(), name='detail'),
-    path('<int:pk>/Montant/', views.MontantView.as_view(), name='Montant'),
-    path('<int:id>/commande_article/', views.commande_article, name='commande_article'),
+    path('<int:pk>/', views.Detail, name='Detail'),
+    #path('<int:Client_id>/', views.detail),
     path('__debug__/', include(debug_toolbar.urls)),
 
 ]

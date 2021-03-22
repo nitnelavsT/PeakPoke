@@ -30,11 +30,10 @@ class Client(models.Model):
 
 class Commande(models.Model):
     client = models.ForeignKey(Client, on_delete=models.CASCADE, default= "0")
-    Numero_Unique = models.IntegerField()
     Quantite = models.IntegerField()
     Montant = models.FloatField()
     Commande_article = models.CharField(max_length= 1000)
 
 
-
+#azeert
 

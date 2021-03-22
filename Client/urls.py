@@ -12,7 +12,7 @@ urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
     path('<int:pk>/', views.DetailView.as_view(), name='detail'),
     path('<int:pk>/Montant/', views.MontantView.as_view(), name='Montant'),
-    path('<int:Client_id>/commande_article/', views.commande_article, name='commande_article'),
+    path('<int:id>/commande_article/', views.commande_article, name='commande_article'),
     path('__debug__/', include(debug_toolbar.urls)),
 
 ]

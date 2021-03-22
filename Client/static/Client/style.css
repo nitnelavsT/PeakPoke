@@ -1,7 +1,61 @@
-li a {
-    color: green
+* {
+   margin:0;
+   padding:0;
+   box-sizing: border-box;
 }
 
-body{
-    background: white url("images/background.gif") no-repeat;
+h1 {
+    position: absolute;
+    color:white;
+    margin-bottom: 40%;
+}
+
+body {
+   background: black;
+   font-family: arial;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+}
+
+a:link{
+    color: white;
+    text-decoration: none;
+}
+
+a:visited{
+    color: white;
+}
+
+li {
+    list-style: none;
+    width: 300px;
+    front-size: 1.2rem;
+    background: rgb(23,23,23);
+    margin: 10px 0;
+    padding: 20px 30px;
+    position: relative;
+    transition: all .4s;
+    z-index: 5;
+}
+
+li::before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 5px;
+    background: red;
+    transition: all .4s;
+    z-index: -1;
+}
+
+li:hover::before{
+    width: 100%;
+}
+
+li:hover {
+    transform: translateX(20px);
 }

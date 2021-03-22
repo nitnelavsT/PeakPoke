@@ -38,3 +38,10 @@ def commande_article(request, Client_id):
         selected_commande.save()
         return HttpResponseRedirect(reverse('Client:Montant', args=(Client_id,)))
 
+
+
+
+def Detail(request, Client_id):
+    client = Client.objects.get(pk=Client_id)
+    message = "Le nom du Client est {}".format(Client.Nom, Client)
+    return HttpResponse(message)

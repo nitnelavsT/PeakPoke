@@ -10,10 +10,11 @@
     {% if lastest_Client %}
         <ul>
             {% for Client in lastest_Client %}
-                <li><a href="{%url 'detail' Client.id}" style="text-decoration:none"> {{ Client.Nom }}</a></li>
+                <li><a href="{% url 'detailC' Client_id=Client.id %}" > {{ Client.Nom }}</a></li>
             {% endfor %}
             </ul>
     {% else %}
             <p>No Client are available.</p>
     {% endif %}
 </body>
+</head>

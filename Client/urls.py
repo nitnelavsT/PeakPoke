@@ -6,12 +6,12 @@ from django.urls import include, path
 
 from . import views
 
-app_name = 'Client'
+
 urlpatterns = [
     #ex /Client/
-    path('', views.IndexView.as_view(), name='index'),
-    path('<int:pk>/', views.Detail, name='Detail'),
-    #path('<int:Client_id>/', views.detail),
+    path('', views.IndexView.as_view(), name="indexC"),
+    #path('', views.index),
+    path('<Client_id>', views.detail, name="detailC"),
     path('__debug__/', include(debug_toolbar.urls)),
 
 ]

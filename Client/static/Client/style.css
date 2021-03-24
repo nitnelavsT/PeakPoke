@@ -11,7 +11,7 @@ h1 {
 }
 
 body {
-   background: black;
+   background: Black;
    font-family: arial;
    display: flex;
    justify-content: center;
@@ -59,7 +59,3 @@ li:hover::before{
 li:hover {
     transform: translateX(20px);
 }
-
-/*
-test
-*/

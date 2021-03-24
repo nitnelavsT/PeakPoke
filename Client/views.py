@@ -52,9 +52,9 @@ def commande_article(request, Client_id):
 
 
 
-def index(request):
+'''def index(request):
     template = loader.get_template('Client/index.html')
-    return HttpResponse(template.render(request=request))
+    return HttpResponse(template.render(request=request))'''
 
 
 

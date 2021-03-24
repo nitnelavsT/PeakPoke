@@ -16,4 +16,5 @@ Reste à faire :
 - hébergement
 - mode de payement
 - anomalies
+- liason base Article et Client
 

@@ -4,6 +4,7 @@ from django.template import loader
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.views import generic
+from django.template import loader
 
 
 class IndexView(generic.ListView):
@@ -15,14 +16,22 @@ class IndexView(generic.ListView):
         return Client.objects.order_by('Nom')  # Permet de trier les client par nom
 
 
-class DetailView(generic.DetailView):
-    model = Client
-    template_name = 'Client/detail.html'
 
-
-class MontantView(generic.DetailView):
-    model = Client
-    template_name = 'Client/Montant.html'
+def detail(request, Client_id):
+    client = Client.objects.get(pk=Client_id)
+    message = "Le nom du Client est {}".format(Client.Nom, Client)
+    context = dict()
+    return render(request, 'Client/index.html', context)
+#
+#
+# class DetailView(generic.DetailView):
+#     model = Client
+#     template_name = 'Client/detail.html'
+#
+#
+# class MontantView(generic.DetailView):
+#     model = Client
+#     template_name = 'Client/Montant.html'
 
 
 def commande_article(request, Client_id):
@@ -41,7 +50,12 @@ def commande_article(request, Client_id):
 
 
 
-def Detail(request, Client_id):
-    client = Client.objects.get(pk=Client_id)
-    message = "Le nom du Client est {}".format(Client.Nom, Client)
-    return HttpResponse(message)
+
+
+def index(request):
+    template = loader.get_template('Client/index.html')
+    return HttpResponse(template.render(request=request))
+
+
+
+

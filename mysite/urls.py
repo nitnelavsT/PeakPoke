@@ -4,12 +4,15 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.urls import include, path
 from . import views
+from apps.common.views import HomeView
+
 
 
 
 
 urlpatterns = [
-    path('', views.index),
+    path('', HomeView.as_view(), name='home'),
+    #path('', views.index),
     path('Client/', include('Client.urls')),
     path('Article/', include('Article.urls')),
     path('', views.index),

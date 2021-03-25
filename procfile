@@ -1,0 +1,1 @@
+web: gunicorn PEAKPOKE.wsgi --log-file -

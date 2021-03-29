@@ -1,6 +1,5 @@
 {% load static %}
 
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -18,7 +17,7 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="{% static 'Client/sb-admin-2.min.css' %}" rel="stylesheet">
+  <link href="{% static 'Client/sb-admin-2.css' %}" rel="stylesheet">
 
 </head>
 
@@ -54,6 +53,42 @@
                   </div>
                   <div class="text-center">
                     <a class="small" href="#">PeakPoke</a>
+                    <br>
+                    <script type="text/javascript">
+                      var nBanDelais = 10;
+                      aBannieres = new Array();
+                      // Bannières
+                      aBannieres[0] = new twBanniere("https://www.bricorama.fr/","https://www.diables-rouges.fr/wp-content/uploads/2018/04/ope-we.jpg","titre 1");
+                      aBannieres[1] = new twBanniere("https://www.castorama.fr/","https://media.anti-crise.fr/2020/09/octobre2020castorama2309202012102020S0C0castorama-1-og-image.jpg","titre= 2");
+                      aBannieres[2] = new twBanniere("https://www.bricomarche.com/","https://archiv.kompasslev.cz/vos-promos.fr//public/gimg/9/6/2/6/9/8/962698-900-100000.jpg","titre= 3");
+
+
+                      function twBanniere(_url,_src,_texte) {this.url=_url;this.src=_src;this.texte=_texte;}
+
+                      function twRotation(){
+                        nBanPos=(nBanPos<nBanMax-1)?nBanPos+1:0;
+                        if (document.all){
+                          document.images["twban"].style.filter="blendTrans(duration=2)";
+                          document.images["twban"].style.filter="blendTrans(duration=CrossFadeDuration)";
+                          document.images["twban"].filters.blendTrans.Apply();
+                        }
+                        document.images["twban"].src=aBannieres[nBanPos].src;
+                        if (document.all) document.images["twban"].filters.blendTrans.Play();
+                          oTimer = setTimeout("twRotation()",nBanDelais*1000);
+                        }
+                        var nBanPos = 0;
+                        var oTimer;
+                        var nBanMax = aBannieres.length;
+
+                        //
+                      </script>
+
+                        <a href="javascript:document.location.href=aBannieres[nBanPos].url" onMouseOver="window.status=aBannieres[nBanPos].url; return true" onMouseOut="window.status=’’;">
+                        <img src="http://trucsweb.com/images/ban-ue.png" alt="Chargement..." style="width:300px" name="twban" border="0" onMouseOver="this.title=aBannieres[nBanPos].texte;"/></a>
+                        <script type="text/javascript" language="javascript">
+                        twRotation();
+                         //
+                        </script>
                   </div>
                 </div>
               </div>

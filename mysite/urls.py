@@ -11,11 +11,9 @@ from apps.common.views import HomeView
 
 
 urlpatterns = [
-    path('', HomeView.as_view(), name='home'),
-    #path('', views.index),
+    path('', views.index, name='home'),
     path('Client/', include('Client.urls')),
     path('Article/', include('Article.urls')),
-    path('', views.index),
     path('admin/', admin.site.urls),
     path('__debug__/', include(debug_toolbar.urls)),
 ]

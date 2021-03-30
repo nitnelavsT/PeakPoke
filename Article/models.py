@@ -11,4 +11,4 @@ class Article(models.Model):
     prix = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
 
     def __str__(self):
-        return str(self.numero_unique) + str(self.nom_article) + "€" + str(self.prix)
+        return self.nom_article

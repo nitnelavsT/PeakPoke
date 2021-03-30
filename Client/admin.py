@@ -13,7 +13,7 @@ class CommandeInline(admin.TabularInline): #Permet l'affichage de commande sous 
 
 class ClientAdmin(admin.ModelAdmin): #Disposition de Client dans l'interface d'administration
     fieldsets = [ #disposition des champs
-        ('Identitite', {'fields': ['Nom', 'Prenom','Date_naissance','Adresse','Numero_Telephone']}),
+        ('Identitite', {'fields': ['Nom', 'Prenom','Date_naissance','Adresse','Numero_Telephone','Email']}),
         ('Profession', {'fields': ['Categorie_socioPro', ]}),
     ]
     inlines = [CommandeInline] #affichage de commande en dousous de cette interface

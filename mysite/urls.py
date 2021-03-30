@@ -10,7 +10,7 @@ from apps.common.views import HomeView
 
 
 
-urlpatterns = [
+urlpatterns = [ #récupération des urls des autres applications et de l'outils de débogage
     path('', views.index, name='home'),
     path('Client/', include('Client.urls')),
     path('Article/', include('Article.urls')),

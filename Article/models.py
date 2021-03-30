@@ -3,8 +3,6 @@ from Client.models import Commande
 import uuid
 
 class Article(models.Model):
-    #commande_article = models.ForeignKey(Commande, on_delete=models.CASCADE, default= "0")
-    #numero_unique = models.CharField(max_length=3, blank=True,editable=False,unique=True, default=create_ref_number())
     numero_unique= models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
     nom_article = models.CharField(max_length=100)
     quantite_article = models.IntegerField(default=0)

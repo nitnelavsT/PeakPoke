@@ -32,7 +32,7 @@ class Commande(models.Model):
     client = models.ForeignKey(Client, on_delete=models.CASCADE, default= "0")
     Quantite = models.IntegerField()
     Montant = models.FloatField()
-    Commande_article = models.CharField(max_length= 1000)
+    Commande_article = models.ForeignKey(Article, on_delete=models.CASCADE, null=True) #liste déroulante des articles.
 
 
 

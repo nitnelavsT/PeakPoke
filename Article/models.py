@@ -1,5 +1,4 @@
 from django.db import models
-from Client.models import Commande
 import uuid
 
 class Article(models.Model):

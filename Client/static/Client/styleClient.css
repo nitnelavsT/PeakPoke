@@ -1,0 +1,38 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+
+
+body{
+    background: rgb(255, 255, 255);
+    
+
+}
+
+.wrapper{
+    display: grid;
+    grid-gap:10px;
+}
+
+.main-nav ul{
+    position: absolute;
+    color: tomato;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+
+}
+
+h1{
+    text-align: center;
+    margin-top: 40px;
+    color: #000000; 
+    font-family: 'Raleway',sans-serif; 
+    font-size: 62px; 
+    font-weight: 800; 
+    line-height: 72px; 
+    text-transform: uppercase;
+}

@@ -1,0 +1,28 @@
+{% load static %}
+
+
+<link rel="stylesheet" type="text/css" href="{% static 'Client/styleDetail.css' %}">
+
+<head>
+    <title>Fiche Client</title>
+    
+</head>
+
+<body>
+
+        <h2>{{client.Nom}} {{client.Prenom}}</h2>
+        <h1>Présentation du Client</h1>
+        <ul>
+            <li>Nom : {{client.Nom}}</li>
+            <li>Prénom : {{client.Prenom}}</li>
+            <li>Date de naissance : {{client.Date_naissance}}</li>
+            <li>Code postal : {{client.code_postal}}</li>
+            <li>Ville : <a href="https://www.google.fr/maps/place/{{client.Ville}}" >{{client.Ville}}</a> </li>
+            <li>Categorie socioprofessionnelle : {{client.Categorie_socioPro}}</li>
+            <li>Numéro de téléphone : {{client.Numero_Telephone}}</li>
+            <li>Email : <a href="mailto:{{client.Email}}">{{client.Email}}</a> </li>
+            <p>Vous pouvez modifier ce client <a href="/admin/Client/client/{{client.id}}" > ici</a></p>
+        </ul>
+</body>
+</head>
+

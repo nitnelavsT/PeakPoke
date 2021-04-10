@@ -15,6 +15,7 @@ urlpatterns = [ #récupération des urls des autres applications et de l'outils 
     path('', views.index, name='home'),
     path('Client/', include('Client.urls')),
     path('Article/', include('Article.urls')),
+    path('Pub/', include('Pub.urls')),
     path('admin/', admin.site.urls),
     path('__debug__/', include(debug_toolbar.urls)),
     

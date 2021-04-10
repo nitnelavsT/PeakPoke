@@ -2,7 +2,7 @@ from django.contrib import admin
 
 from .models import  Client, Commande
 from Article.models import Article
-
+from Pub.models import Pub
 
 
 
@@ -30,3 +30,7 @@ class ArticleInline(admin.TabularInline):
 
 class CommandeAdmin(admin.ModelAdmin):
     inlines = [ArticleInline]
+
+class PubInline(admin.TabularInline):
+    model=Pub
+    extra=0

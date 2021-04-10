@@ -33,6 +33,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'Client.apps.ClientConfig',
     'Article.apps.ArticleConfig',
+    'Pub.apps.PubConfig',
+    'mathfilters',
     'phonenumber_field',
     'django.contrib.admin',
     'django.contrib.auth',

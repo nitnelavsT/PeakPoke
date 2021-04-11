@@ -11,7 +11,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Page d'accueil</title>
+  <title>Page d'accueil</title> 
 
   <!-- Custom fonts for this template-->
   <link href="{% static 'Client/all.min.css' %}" rel="stylesheet" type="text/css">
@@ -19,51 +19,108 @@
 
   <!-- Custom styles for this template-->
   <link href="{% static 'Client/sb-admin-2.min.css' %}" rel="stylesheet">
+  <link href="{% static 'Client/style.css' %}" rel="stylesheet" type="text/css">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </head>
 
-<body class="bg-gradient-warning">
-
-  <div class="container">
-
-    <!-- Outer Row -->
-    <div class="row justify-content-center">
-
-      <div class="col-xl-10 col-lg-12 col-md-9">
-
-        <div class="card o-hidden border-0 shadow-lg my-5">
-          <div class="card-body p-0">
-            <!-- Nested Row within Card Body -->
-            <div class="row">
-              <div class="col-lg-6 d-none d-lg-block">
-                <img src="{% static 'Client/img/imagegarde.png' %}" class="rounded" alt="Cinque Terre">
+<body>
+    
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">PeakPoke</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Admin</a>
+              <div class="dropdown-menu dropdown-menu-right">
+                  <a href="#" class="dropdown-item">Article</a>
+                  <a href="#" class="dropdown-item">Client</a>
+                  <a href="#"class="dropdown-item">Pub</a>
               </div>
-              <div class="col-lg-6">
-                <div class="p-5">
-                  <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">Welcome To Django CRM!</h1>
+          </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Client</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Pub</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+  <main>
+  
+    <div class = "jumbotron">
+      <img id="peapokeLogo" src="{% static 'Client/img/img_garde.png' %}">
+      <div class="presentation">
+        <h1>PeakPoke</h1> 
+        <p>Bienvenue sur le site de PeakPoke</p>
+      </div>
+      
+    </div>
+  
+    <section class="container">
+      <div class="row">
+
+          <div class="col-md-4">
+              <div class="card my-2 shadow p-3 mb-5">
+                  <h5 class="card-header">Contributeur</h5>
+                  <div class="card-body">
+
+                      <h6 class="card-subtitle mb-2 text-muted">Description et présentation bref de l'équipe de PeakPoke 
+                      </h6>
+                      <p class="card-text">Etudiant en 3ème année d'Informatique à l'Université d'Evry Courcouronnes
+                      </p>
+                      <a class="btn btn-primary m-1" href="#">Lien</a>
                   </div>
-                  <a href="#" class="btn btn-danger btn-block btn-lg">Register / Sign Up</a>
-                  <br>
-                  <a href="#" class="btn btn-primary btn-block btn-lg">Login</a>
-                  <br>
-                  <a href="#" class="btn btn-success btn-block btn-lg">Forgot Password</a>
-                  <hr>
-                  <div class="text-center">
-                    <a class="small" href="#">Subscribe</a>
-                  </div>
-                  <div class="text-center">
-                    <a class="small" href="#">PeakPoke</a>
-                    <br>  
+              </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card my-2 shadow p-3 mb-5">
+                <h5 class="card-header">Github</h5>
+                <div class="card-body">
+
+                    <h6 class="card-subtitle mb-2 text-muted">Page officiel de notre Github 
+                    </h6>
+                    <p class="card-text">C'est sur ce dernier que nous partageons les dernières mises à jour ainsi que le cahier des charges de notre projet
+                    </p>
+                    <a class="btn btn-primary m-1" href="#">Lien</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+          <a href="javascript:document.location.href=aBannieres[nBanPos].url" onMouseOver="window.status=aBannieres[nBanPos].url; return true" onMouseOut="window.status=’’;">
+          <img src="http://trucsweb.com/images/ban-ue.png" alt="Chargement..." style="width:300px" name="twban" border="0" onMouseOver="this.title=aBannieres[nBanPos].texte;"/></a>
+          
+      </div>
+      </div>
+  </section>
+  
+  </main>
+  
+  
+      <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+  
+        
+    </body>
                     <script type="text/javascript">
                       var nBanDelais = 10;
                       aBannieres = new Array();
                       // Bannières
                       aBannieres[0] = new twBanniere("https://www.bricorama.fr/","https://www.diables-rouges.fr/wp-content/uploads/2018/04/ope-we.jpg","titre 1");
-                      aBannieres[1] = new twBanniere("https://www.castorama.fr/","https://media.anti-crise.fr/2020/09/octobre2020castorama2309202012102020S0C0castorama-1-og-image.jpg","titre= 2");
+                      aBannieres[1] = new twBanniere("https://www.castorama.fr/","http://www.bonsplansagogo.com/wp-content/uploadsaimonn/2015/01/promo-castorama.png","titre= 2");
                       aBannieres[2] = new twBanniere("https://www.bricomarche.com/","https://archiv.kompasslev.cz/vos-promos.fr//public/gimg/9/6/2/6/9/8/962698-900-100000.jpg","titre= 3");
                     
-                      
+                      // Ne pas modifier le code suivant
                       function twBanniere(_url,_src,_texte) {this.url=_url;this.src=_src;this.texte=_texte;}
                     
                       function twRotation(){
@@ -74,8 +131,9 @@
                           document.images["twban"].filters.blendTrans.Apply();
                         }
                         document.images["twban"].src=aBannieres[nBanPos].src;
-                        if (document.all) document.images["twban"].filters.blendTrans.Play();
-                          oTimer = setTimeout("twRotation()",nBanDelais*1000);
+
+
+                        oTimer = setTimeout("twRotation()",nBanDelais*1000);
                         }
                         var nBanPos = 0;
                         var oTimer;
@@ -84,8 +142,6 @@
                         //
                       </script>
 
-                        <a href="javascript:document.location.href=aBannieres[nBanPos].url" onMouseOver="window.status=aBannieres[nBanPos].url; return true" onMouseOut="window.status=’’;">
-                        <img src="http://trucsweb.com/images/ban-ue.png" alt="Chargement..." style="width:300px" name="twban" border="0" onMouseOver="this.title=aBannieres[nBanPos].texte;"/></a>
                         <script type="text/javascript" language="javascript">
                         twRotation();
                          // 
@@ -103,15 +159,7 @@
 
   </div>
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
-  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
-  <!-- Core plugin JavaScript-->
-  <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
-
-  <!-- Custom scripts for all pages-->
-  <script src="{% static 'js/sb-admin-2.min.js' %}"></script>
 
 </body>
 

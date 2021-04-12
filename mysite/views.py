@@ -9,4 +9,6 @@ def index(request):
     template = loader.get_template('Client/home.html')
     return HttpResponse(template.render(request=request))
 
-    #barou
+#affichage de la page de l'équipe
+def Team(request):
+    return render(request, "Client/team.html")

@@ -13,6 +13,7 @@ from django.conf.urls import url
 
 urlpatterns = [ #récupération des urls des autres applications et de l'outils de débogage
     path('', views.index, name='home'),
+    path('team/', views.Team, name="Team"),
     path('Client/', include('Client.urls')),
     path('Article/', include('Article.urls')),
     path('Pub/', include('Pub.urls')),

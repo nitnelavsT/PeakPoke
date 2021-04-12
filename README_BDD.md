@@ -16,13 +16,10 @@ Reste à faire :
 - Création de publicité
   - Intégration sur support papier
   - Regroupement des informations de la cible sur le support d'envoi
-  - Sélection des adresses e-mails et postales des cibles de transmission
-- hébergement
 - mode de payement
 - anomalies
   - Rechercher un courrier
   - Editer un courrier
   - Système gérant les anomalies résolues
   - Système gérant les anomalies non résolues
-- liaison base Article et Client
 

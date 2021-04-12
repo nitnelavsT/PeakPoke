@@ -13,13 +13,51 @@ integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwr
 </head>
 
 <body>
-    <div class = "d-flex bd-highlight justify-content-center">
-        <div class="card my-2 shadow p-3 mb-5 justify-content-center">
-            <div class="card-body">
-                <h5 class="card-header text-center display-1 mb-5">{{pub.titre}}</h5>
-                <p class="card-text">{{pub.body}}</p>
+    
+    <header>
+
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="http://127.0.0.1:8000/">PeakPoke</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Admin</a>
+              <div class="dropdown-menu dropdown-menu-right">
+                    <a href="http://127.0.0.1:8000/admin/Article/article" class="dropdown-item">Article</a>
+                    <a href="http://127.0.0.1:8000/admin/Client/client" class="dropdown-item">Client</a>
+                    <a href="http://127.0.0.1:8000/admin/Pub/pub"class="dropdown-item">Pub</a>
+                </div>
+            </li>
+                <li class="nav-item">
+                <a class="nav-link disabled" href="http://127.0.0.1:8000/Client">Client</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="/Pub" tabindex="-1">Pub</a>
+                </li>
+                <li class="nav-item">
+              <a class="nav-link" href="http://127.0.0.1:8000/team">Equipe</a>
+            </li>
+            </ul>
             </div>
         </div>
-    </div>
+        </nav>
+
+    </header>
+
+    <main>
+    
+        <div class = "d-flex bd-highlight justify-content-center">
+            <div class="card my-2 shadow p-3 mb-5 justify-content-center">
+                <div class="card-body">
+                    <h5 class="card-header text-center display-1 mb-5">{{pub.titre}}</h5>
+                    <p class="card-text">{{pub.body}}</p>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 </head>

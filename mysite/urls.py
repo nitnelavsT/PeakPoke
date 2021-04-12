@@ -19,6 +19,7 @@ urlpatterns = [ #récupération des urls des autres applications et de l'outils 
     path('admin/', admin.site.urls),
     path('__debug__/', include(debug_toolbar.urls)),
     
+    url(r'^tinymce/', include('tinymce.urls')),
     url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), 
     url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}), 
 ]

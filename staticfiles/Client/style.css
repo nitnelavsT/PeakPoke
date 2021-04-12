@@ -104,3 +104,19 @@ body {
     margin-top: 7rem;
   }
 }
+
+.jumbotron{
+  background-color : white;
+  padding : 1rem 2rem;
+}
+
+#peapokeLogo{
+  height: 15em;
+  margin-left: 15%; 
+}
+
+.presentation{
+  display : inline-block;
+  vertical-align : middle;
+  margin-left : 2em;
+}

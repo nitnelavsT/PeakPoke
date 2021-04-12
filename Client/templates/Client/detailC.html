@@ -13,33 +13,74 @@ integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwr
 </head>
 
 <body>
-    <h1 class="text-center display-1 mb-5">{{client.Nom}} {{client.Prenom}}</h1>
-    <div class="row">
-        <div class="d-flex bd-highlight justify-content-center ">
-            <div class= "cardcenter">  
-                <div class="card-header"><h1 class="text-center display-5 mb-2">Présentation du Client</h1></div>
-                
-                <ul>
-                    <li class="list-group-item list-group-item-dark my-1">Nom : {{client.Nom}}</li>
-                    <li class="list-group-item list-group-item-dark my-1">Prénom : {{client.Prenom}}</li>
-                    <li class="list-group-item list-group-item-dark my-1">Date de naissance : {{client.Date_naissance}}</li>
-                    <li class="list-group-item list-group-item-dark my-1">Code postal : {{client.code_postal}}</li>
-                    <li class="list-group-item list-group-item-dark my-1">Ville : <a href="https://www.google.fr/maps/place/{{client.Ville}}" >{{client.Ville}}</a> </li>
-                    <li class="list-group-item list-group-item-dark my-1">Categorie socioprofessionnelle : {{client.Categorie_socioPro}}</li>
-                    <li class="list-group-item list-group-item-dark my-1">Numéro de téléphone : {{client.Numero_Telephone}}</li>
-                    <li class="list-group-item list-group-item-dark my-1">Email : <a href="mailto:{{client.Email}}">{{client.Email}}</a> </li>
-                    <p >Vous pouvez modifier ce client <a href="/admin/Client/client/{{client.id}}" > ici</a>
-                </ul>
-            </div>
+    <header>
 
-            <div class= "card">
-                <div class="card-header"><h1 class="text-center display-5 mb-2">Commande du client</h1></div>
-                <ul>
-                    <li><a class="btn btn-outline-dark m-1" href="{{commandes.id}}">{{commandes.Commande_article}}</a>
-                </ul>
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="http://127.0.0.1:8000/">PeakPoke</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Admin</a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a href="http://127.0.0.1:8000/admin/Article/article" class="dropdown-item">Article</a>
+                        <a href="http://127.0.0.1:8000/admin/Client/client" class="dropdown-item">Client</a>
+                        <a href="http://127.0.0.1:8000/admin/Pub/pub"class="dropdown-item">Pub</a>
+                    </div>
+                </li>
+                    <li class="nav-item">
+                    <a class="nav-link disabled" href="http://127.0.0.1:8000/Client">Client</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="/Pub" tabindex="-1">Pub</a>
+                    </li>
+                    <li class="nav-item">
+                <a class="nav-link" href="http://127.0.0.1:8000/team">Equipe</a>
+                </li>
+            </ul>
             </div>
         </div>
-    </div>
+        </nav>
+
+    </header>
+
+    <main>
+        <h1 class="text-center display-1 mb-5">{{client.Nom}} {{client.Prenom}}</h1>
+
+            <div class="raw">
+                <div class="d-flex bd-highlight justify-content-center ">
+                    <div class= "card">  
+                        <div class="card-header"><h1 class="text-center display-5 mb-2">Présentation du Client</h1></div>
+                        
+                        <ul>
+                            <li class="list-group-item list-group-item-dark my-1">Nom : {{client.Nom}}</li>
+                            <li class="list-group-item list-group-item-dark my-1">Prénom : {{client.Prenom}}</li>
+                            <li class="list-group-item list-group-item-dark my-1">Date de naissance : {{client.Date_naissance}}</li>
+                            <li class="list-group-item list-group-item-dark my-1">Code postal : {{client.code_postal}}</li>
+                            <li class="list-group-item list-group-item-dark my-1">Ville : <a href="https://www.google.fr/maps/place/{{client.Ville}}" >{{client.Ville}}</a> </li>
+                            <li class="list-group-item list-group-item-dark my-1">Categorie socioprofessionnelle : {{client.Categorie_socioPro}}</li>
+                            <li class="list-group-item list-group-item-dark my-1">Numéro de téléphone : {{client.Numero_Telephone}}</li>
+                            <li class="list-group-item list-group-item-dark my-1">Email : <a href="mailto:{{client.Email}}">{{client.Email}}</a> </li>
+                            <p >Vous pouvez modifier ce client <a href="/admin/Client/client/{{client.id}}" > ici</a>
+                        </ul>
+                    </div>
+
+                    <div class= "card">
+                        <div class="card-header"><h1 class="text-center display-5 mb-2">Commande du client</h1></div>
+                        <ul>
+                            {%for Commande in commandes %}
+                            {% load mathfilters %}
+                            <li>{{Commande.Commande_article}} x {{Commande.Quantite}} = {{Commande.Montant|mul:Commande.Quantite}} €</a></li>
+                            
+                            {%endfor%}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </main>
 </body>
 </head>
 

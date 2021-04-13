@@ -13,7 +13,7 @@ class Client(models.Model):
     Nom = models.CharField(max_length=50)
     Prenom = models.CharField(max_length=50)
     Date_naissance = models.DateField()
-    numero_de_rue = models.DecimalField(decimal_places=0, max_digits=3, default="")
+    rue = models.CharField(max_length=50)
     code_postal = models.DecimalField(max_digits=5, decimal_places=0, default="")
     Ville=models.CharField(max_length=100)
     Categorie_socioPro = models.CharField(max_length=100, choices= cat_socio)

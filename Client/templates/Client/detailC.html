@@ -59,7 +59,8 @@ integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwr
                             <li class="list-group-item list-group-item-dark my-1">Nom : {{client.Nom}}</li>
                             <li class="list-group-item list-group-item-dark my-1">Prénom : {{client.Prenom}}</li>
                             <li class="list-group-item list-group-item-dark my-1">Date de naissance : {{client.Date_naissance}}</li>
-                            <li class="list-group-item list-group-item-dark my-1">Code postal : {{client.code_postal}}</li>
+                            <li class="list-group-item list-group-item-dark my-1">rue : {{client.rue}}</li>
+                            <li class="list-group-item list-group-item-dark my-1">Code postal : <a href="https://www.google.fr/maps/place/{{client.rue}}" >{{client.rue}}</a></li>
                             <li class="list-group-item list-group-item-dark my-1">Ville : <a href="https://www.google.fr/maps/place/{{client.Ville}}" >{{client.Ville}}</a> </li>
                             <li class="list-group-item list-group-item-dark my-1">Categorie socioprofessionnelle : {{client.Categorie_socioPro}}</li>
                             <li class="list-group-item list-group-item-dark my-1">Numéro de téléphone : {{client.Numero_Telephone}}</li>

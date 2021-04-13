@@ -23,8 +23,8 @@ class Client(models.Model):
     Email = models.EmailField(max_length=254, blank=True)
 
 
-    # def __str__(self):
-    #     return '{self.Nom} {self.Prenom}'.format(self=self)
+    def __str__(self):
+        return '{self.Nom} {self.Prenom}'.format(self=self)
 
 
 class Commande(models.Model):

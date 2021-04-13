@@ -21,7 +21,7 @@ class ClientAdmin(admin.ModelAdmin):
 
     #Définition des catégorie de champs
     fieldsets = [
-        ('Identitite', {'fields': ['Nom', 'Prenom','Date_naissance','numero_de_rue','code_postal','Ville','Numero_Telephone','Email']}),
+        ('Identitite', {'fields': ['Nom', 'Prenom','Date_naissance','rue','code_postal','Ville','Numero_Telephone','Email']}),
         ('Profession', {'fields': ['Categorie_socioPro', ]}),
     ]
 

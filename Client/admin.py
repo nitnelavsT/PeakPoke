@@ -1,8 +1,7 @@
 from django.contrib import admin
-
-from .models import  Client, Commande
+from .models import Client, Commande
 from Article.models import Article
-
+from Pub.models import Pub
 
 
 
@@ -10,23 +9,35 @@ class CommandeInline(admin.TabularInline): #Permet l'affichage de commande sous 
     model = Commande
     extra = 0
 
+class ArticleInline(admin.TabularInline): #Disposition de Client dans l'interface d'administration
+    model = Article
+    extra = 0
 
-class ClientAdmin(admin.ModelAdmin): #Disposition de Client dans l'interface d'administration
-    fieldsets = [ #disposition des champs
-        ('Identitite', {'fields': ['Nom', 'Prenom','Date_naissance','Adresse','Numero_Telephone','Email']}),
+
+class ClientAdmin(admin.ModelAdmin):
+
+    #Les champs à afficher sur l'interface
+    list_display = ('Nom', 'Prenom')
+
+    #Définition des catégorie de champs
+    fieldsets = [
+        ('Identitite', {'fields': ['Nom', 'Prenom','Date_naissance','numero_de_rue','code_postal','Ville','Numero_Telephone','Email']}),
         ('Profession', {'fields': ['Categorie_socioPro', ]}),
     ]
-    inlines = [CommandeInline] #affichage de commande en dousous de cette interface
 
+    #affiche la commande dans l'interface de Client
+    inlines = [CommandeInline]
 
-    search_fields = ['Nom','Prenom'] #champs de recherche possible pour les client
+    #Champs pour la recherche de Client
+    search_fields = ['Nom','Prenom']
 
 admin.site.register(Client, ClientAdmin)
 
 
-class ArticleInline(admin.TabularInline):
-    model = Article
-    extra = 0
+
 
 class CommandeAdmin(admin.ModelAdmin):
     inlines = [ArticleInline]
+
+
+

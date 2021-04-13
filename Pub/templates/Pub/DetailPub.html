@@ -49,12 +49,13 @@ integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwr
     </header>
 
     <main>
-    
+
         <div class = "d-flex bd-highlight justify-content-center">
             <div class="card my-2 shadow p-3 mb-5 justify-content-center">
                 <div class="card-body">
                     <h5 class="card-header text-center display-1 mb-5">{{pub.titre}}</h5>
                     <p class="card-text">{{pub.body}}</p>
+                    <footer class="blockquote-footer"><a href="mailto:{{client.Email}}">{{pub.auteur}}</footer>
                 </div>
             </div>
         </div>

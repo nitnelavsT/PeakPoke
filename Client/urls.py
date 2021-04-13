@@ -11,6 +11,7 @@ urlpatterns = [
     #ex /Client/
     path('', views.IndexView, name="Client"), #lien vers l'index du site
     path('<Client_id>', views.detail, name="detailC"), #lien vers les détails clients
+    path('<int:Commande_id>/<Article_id>', views.commande_article, name="Commande"),
     path('__debug__/', include(debug_toolbar.urls)),
 
 ]
